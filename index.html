@@ -47,9 +47,7 @@
         /* Tables */
         .table-wrapper { overflow-x: auto; border-radius: 12px; border: 1px solid #e0e0e0; }
         table { width: 100%; border-collapse: collapse; table-layout: auto; }
-        .season-table { max-width: 700px; }
-        .season-table table { table-layout: fixed; }
-        th { background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%); color: white; padding: 0.75rem 0.5rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; white-space: nowrap; text-align: right; }
+        th { background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%); color: white; padding: 0.75rem 0.5rem; font-size: 0.75rem; letter-spacing: 0.5px; cursor: pointer; white-space: nowrap; text-align: right; }
         th:first-child { text-align: left; }
         th:hover { background: linear-gradient(135deg, #444 0%, #333 100%); }
         td { padding: 0.75rem 0.5rem; border-bottom: 1px solid #eee; text-align: right; font-size: 0.9rem; }
@@ -593,16 +591,16 @@ function renderStatsTable(stats) {
         <table>
             <thead>
                 <tr>
-                    <th data-col="name">Manager ${sortArrow('name')}</th>
+                    <th data-col="name">MANAGER ${sortArrow('name')}</th>
                     <th data-col="w">W ${sortArrow('w')}</th>
                     <th data-col="l">L ${sortArrow('l')}</th>
-                    <th data-col="percent">Win% ${sortArrow('percent')}</th>
+                    <th data-col="percent">WIN% ${sortArrow('percent')}</th>
                     <th data-col="tpf">TPF ${sortArrow('tpf')}</th>
-                    <th data-col="tpfSeason">TPF/Szn ${sortArrow('tpfSeason')}</th>
-                    <th data-col="playoffWins">PO W ${sortArrow('playoffWins')}</th>
-                    <th data-col="playoffLosses">PO L ${sortArrow('playoffLosses')}</th>
-                    <th data-col="playoffAppearances">PO App ${sortArrow('playoffAppearances')}</th>
-                    <th data-col="playoffWinPct">PO Win% ${sortArrow('playoffWinPct')}</th>
+                    <th data-col="tpfSeason">TPF/SZN ${sortArrow('tpfSeason')}</th>
+                    <th data-col="playoffWins">PLAYOFF WINS ${sortArrow('playoffWins')}</th>
+                    <th data-col="playoffLosses">PLAYOFF LOSSES ${sortArrow('playoffLosses')}</th>
+                    <th data-col="playoffAppearances">PLAYOFF APPEARANCES ${sortArrow('playoffAppearances')}</th>
+                    <th data-col="playoffWinPct">PLAYOFF WIN % ${sortArrow('playoffWinPct')}</th>
                 </tr>
             </thead>
             <tbody>
@@ -631,12 +629,12 @@ function renderFinishesTable(finishes) {
         <table>
             <thead>
                 <tr>
-                    <th data-col="name">Manager ${sortArrow('name')}</th>
-                    <th data-col="first">🥇 1st ${sortArrow('first')}</th>
-                    <th data-col="second">🥈 2nd ${sortArrow('second')}</th>
-                    <th data-col="third">🥉 3rd ${sortArrow('third')}</th>
+                    <th data-col="name">MANAGER ${sortArrow('name')}</th>
+                    <th data-col="first">🥇 1ST ${sortArrow('first')}</th>
+                    <th data-col="second">🥈 2ND ${sortArrow('second')}</th>
+                    <th data-col="third">🥉 3RD ${sortArrow('third')}</th>
                     <th data-col="tpf">TPF ${sortArrow('tpf')}</th>
-                    <th data-col="winnings">Winnings ${sortArrow('winnings')}</th>
+                    <th data-col="winnings">WINNINGS ${sortArrow('winnings')}</th>
                 </tr>
             </thead>
             <tbody>
@@ -713,7 +711,7 @@ function renderSeason(year) {
         <div class="card">
             <div class="card-header"><span>📋</span><h2>${year} Final Standings</h2></div>
             <div class="card-body">
-                <div class="table-wrapper season-table">
+                <div class="table-wrapper">
                     ${renderSeasonTable(s.standings)}
                 </div>
             </div>
@@ -769,14 +767,14 @@ function renderSeasonTable(standings) {
         <table>
             <thead>
                 <tr>
-                    <th data-col="rank" style="width: 40px;"># ${sortArrow('rank')}</th>
-                    <th data-col="name" style="width: 120px;">Manager ${sortArrow('name')}</th>
-                    <th data-col="w" style="width: 50px;">W ${sortArrow('w')}</th>
-                    <th data-col="l" style="width: 50px;">L ${sortArrow('l')}</th>
-                    <th data-col="pf" style="width: 90px;">PF ${sortArrow('pf')}</th>
-                    <th data-col="pa" style="width: 90px;">PA ${sortArrow('pa')}</th>
-                    <th data-col="playoffWins" style="width: 60px;">PO W ${sortArrow('playoffWins')}</th>
-                    <th data-col="playoffLosses" style="width: 60px;">PO L ${sortArrow('playoffLosses')}</th>
+                    <th data-col="rank"># ${sortArrow('rank')}</th>
+                    <th data-col="name">MANAGER ${sortArrow('name')}</th>
+                    <th data-col="w">W ${sortArrow('w')}</th>
+                    <th data-col="l">L ${sortArrow('l')}</th>
+                    <th data-col="pf">POINTS FOR ${sortArrow('pf')}</th>
+                    <th data-col="pa">POINTS AGAINST ${sortArrow('pa')}</th>
+                    <th data-col="playoffWins">PLAYOFF WINS ${sortArrow('playoffWins')}</th>
+                    <th data-col="playoffLosses">PLAYOFF LOSSES ${sortArrow('playoffLosses')}</th>
                 </tr>
             </thead>
             <tbody>
@@ -919,13 +917,13 @@ function editSeason(year) {
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Name</th>
+                            <th>NAME</th>
                             <th>W</th>
                             <th>L</th>
-                            <th>PF</th>
-                            <th>PA</th>
-                            <th>PO W</th>
-                            <th>PO L</th>
+                            <th>POINTS FOR</th>
+                            <th>POINTS AGAINST</th>
+                            <th>PLAYOFF WINS</th>
+                            <th>PLAYOFF LOSSES</th>
                         </tr>
                     </thead>
                     <tbody>
